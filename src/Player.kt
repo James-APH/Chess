@@ -1,9 +1,16 @@
-class Player(private val name: String, private var color: String, private var wins: Int=0,private var losses: Int=0) {
+class Player(private val name: String="NO-NAME", private var color: String="BLANK", private var wins: Int=0,private var losses: Int=0) {
+    private var gameLogic: GameLogic = GameLogic()
     constructor(name: String, color: String) : this(name, color, 0, 0) {
         if (color != "WHITE" && color != "BLACK") {
             this.color = "BLANK"
         }
     }
+
+    fun playerTurn() {
+        println("$name, its your turn now!")
+
+    }
+
 
     fun move() {
         // useless for now, need to figure out how I'll store the game state
