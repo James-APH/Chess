@@ -13,23 +13,21 @@ class ChessGame(private var white: Player = Player(), private var black: Player 
             while (gameLogic.isWinner(board) != true ) {
                 print(board.toString())
                 if (turn == "white") {
-                    white.playerTurn()
+                    white.playerTurn(board.getPieceList())
                     turn = "black"
                 } else {
-                    black.playerTurn()
+                    black.playerTurn(board.getPieceList())
                     turn = "white"
                 }
                 board.update(white, black)
             }
             var winner: String = gameLogic.getWinner()
             if (winner == "black") {
-                black.wins()
-                black.increment_wins()
-                white.increment_losses()
+                black.winner()
+                white.loser()
             } else if (winner == "white") {
-                white.wins()
-                white.increment_wins()
-                black.increment_losses()
+                white.winner()
+                black.loser()
             }
             println("Would you like to play again? [y/n]")
             playGameAnswer = readln()
