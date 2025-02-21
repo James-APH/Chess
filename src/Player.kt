@@ -11,16 +11,13 @@ class Player(private val name: String="NO-NAME", private var color: String="BLAN
 
     }
 
-
-    fun move() {
-        // useless for now, need to figure out how I'll store the game state
-    }
-
-    fun increment_losses() {
+    fun loser() {
+        println("$name, you lost and you suck.")
         losses++
     }
 
-    fun increment_wins() {
+    fun winner() {
+        println("$name, you won and you're awesome!")
         wins++
     }
 
