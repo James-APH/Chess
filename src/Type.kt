@@ -1,2 +1,2 @@
-enum class Type {
-}
+enum class Type { PAWN, ROOK, BISHOP, KNIGHT, QUEEN, KING}
+
