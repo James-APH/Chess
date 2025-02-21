@@ -1,4 +1,1 @@
-class Piece(val type: String, ) {
-
-
-}
+data class Piece(val type: String, val color: String = "blank", var display: String, var inPlay: Boolean = false)
