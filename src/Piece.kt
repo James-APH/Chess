@@ -1,2 +1,4 @@
-class Piece {
+class Piece(val type: String, ) {
+
+
 }
