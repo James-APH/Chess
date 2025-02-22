@@ -1,3 +1,5 @@
 fun main() {
-    println("Hello World!")
+    var board: Board = Board()
+    board.initializeBoard()
+    board.displayBoard()
 }
