@@ -25,9 +25,15 @@ class Board {
     }
 
     fun displayBoard() {
-        for (i in 0..<rows) {
-            for (j in 0..<cols) {
-                print(board[i][j].toString() + " ")
+        print(" ")
+        for (i in 1..rows) {
+            print(" $i")
+        }
+        println()
+        for (i in 1..rows) {
+            print("$i ")
+            for (j in 1..cols) {
+                print(board[i-1][j-1].toString() + " ")
             }
             println()
         }
