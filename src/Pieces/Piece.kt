@@ -30,6 +30,6 @@ open class Piece(
     }
 
     override fun toString(): String {
-        return "$color$symbol"
+        return "$color$symbol$reset"
     }
 }
