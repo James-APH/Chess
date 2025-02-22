@@ -1,3 +1,5 @@
+import Pieces.Piece
+
 class Board {
     private val rows: Int = 8
     private val cols: Int = 8
@@ -7,10 +9,10 @@ class Board {
         for (i in 0..<rows) {
             for (j in 0..<cols) {
                 if (j + i % 2 == 1) {
-                    val piece: Piece = Piece("temp", "blank", "__\n__", true)
+                    val piece: Piece = Piece("temp", "blank", "_", true)
                     board[i][j]=piece
                 } else {
-                    val piece: Piece = Piece("temp", "blank", "##\n##", true)
+                    val piece: Piece = Piece("temp", "blank", "#", true)
                     board[i][j]=piece
                 }
             }
