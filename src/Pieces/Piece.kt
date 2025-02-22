@@ -1,8 +1,14 @@
 package Pieces
 
-open class Piece(private val color: String, private var position: Pair<Int, Int>, private var symbol: Char) {
-    constructor(color: String, symbol: Char) : this(color, Pair(0,0), symbol) {
+open class Piece(
+    private var color: String = "\u001b[0m",
+    private var position: Pair<Int, Int> = Pair(0, 0),
+    private var symbol: Char = '#',
+    private var inPlay: Boolean = true) {
+    private val reset: String = "\u001b[0m"
 
+    fun isValid(currentPosition: Pair<Int, Int>, futurePosition: Pair<Int, Int>): Boolean {
+        return true
     }
 
     fun setPosition(position: Pair<Int, Int>) {
@@ -15,6 +21,10 @@ open class Piece(private val color: String, private var position: Pair<Int, Int>
 
     fun getSymbol(): Char {
         return symbol
+    }
+
+    fun kill() {
+        inPlay=false
     }
 
     override fun toString(): String {
