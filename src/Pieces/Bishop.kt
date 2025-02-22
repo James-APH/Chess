@@ -1,5 +1,7 @@
 package Pieces
 
+import Board
+
 class Bishop(
     color: String,
     position: Pair<Int, Int>,
@@ -7,7 +9,7 @@ class Bishop(
     inPlay: Boolean) : Piece(color, position, symbol) {
 
 
-    override fun isValid(currentPosition: Pair<Int, Int>, futurePosition: Pair<Int, Int>): Boolean {
+    override fun isValid(currentPosition: Pair<Int, Int>, futurePosition: Pair<Int, Int>, board: Board): Boolean {
         return false
     }
 }
