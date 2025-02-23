@@ -3,19 +3,19 @@ import Pieces.*
 class Board() {
     private val rows: Int = 8
     private val cols: Int = 8
-    private var yellowPieces = Array<Piece?>(16, init = TODO())
-    private var greenPieces = Array<Piece?>(16, init = TODO())
-    private var board: Array<Array<Piece?>> = Array(rows) { arrayOfNulls<Piece>(cols) }
+    private lateinit var yellowPieces: Array<Piece?>
+    private lateinit var greenPieces: Array<Piece?>
+    private var board: Array<Array<Piece?>> = Array(rows) { kotlin.arrayOfNulls<Pieces.Piece>(cols) }
 
     /*
     Constructor function to create the board.
     Fills the Board with empty Pieces, and playable pieces
      */
     init {
-        yellowPieces = createPieces("yellow", 0, 1)
-        greenPieces = createPieces("green", 6, 7)
-        for (i in 0..<this.rows) {
-            for (j in 0..<this.cols) {
+        yellowPieces = createPieces("\u001b[33m", 1, 0)
+        greenPieces = createPieces("\u001b[32m", 6, 7)
+        for (i in 0..<rows) {
+            for (j in 0..<cols) {
                 if ((j + i) % 2 == 1) {
                     val piece: Piece = Piece("\u001b[0m", Pair(i, j), '#')
                     board[i][j]=piece
@@ -56,7 +56,7 @@ class Board() {
             King(color, Pair(kingRow, 3), 'K', true),
             Queen(color, Pair(kingRow, 4), 'R', true),
             Bishop(color, Pair(kingRow, 5), 'B', true),
-            Knight(color, Pair(kingRow, 6), 'R', true),
+            Knight(color, Pair(kingRow, 6), 'H', true),
             Rook(color, Pair(kingRow, 7), 'R', true),)
     }
 
