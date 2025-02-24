@@ -10,7 +10,11 @@ class Knight(
     inPlay: Boolean) : Piece(color, position, symbol) {
 
 
-    override fun isValid(currentPosition: Pair<Int, Int>, futurePosition: Pair<Int, Int>, board: Board): Boolean {
-        return false
+    override fun isValidMove(currentPosition: Pair<Int, Int>, futurePosition: Pair<Int, Int>, board: Board): Boolean {
+        return true
+    }
+
+    override fun isValidCapture(currentPosition: Pair<Int, Int>, futurePosition: Pair<Int, Int>, board: Board): Boolean {
+        return true
     }
 }

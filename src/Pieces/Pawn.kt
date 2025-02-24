@@ -9,12 +9,11 @@ class Pawn(
     inPlay: Boolean) : Piece(color, position, symbol) {
     private var firstMove: Boolean = true
 
-    override fun isValid(currentPosition: Pair<Int, Int>, futurePosition: Pair<Int, Int>, board: Board): Boolean {
-        if (firstMove) {
-            return true
-        } else {
-            return true
-        }
-        return false
+    override fun isValidMove(currentPosition: Pair<Int, Int>, futurePosition: Pair<Int, Int>, board: Board): Boolean {
+        return true
+    }
+
+    override fun isValidCapture(currentPosition: Pair<Int, Int>, futurePosition: Pair<Int, Int>, board: Board): Boolean {
+        return true
     }
 }
