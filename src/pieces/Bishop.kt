@@ -1,8 +1,8 @@
-package Pieces
+package pieces
 
 import Board
 
-class Queen(
+class Bishop(
     color: String,
     position: Pair<Int, Int>,
     symbol: Char,
