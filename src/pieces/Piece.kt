@@ -5,10 +5,12 @@ import Board
 open class Piece(
     protected var color: String = "\u001b[0m",
     private var position: Pair<Int, Int> = Pair(0, 0),
-    private var symbol: Char = '#') {
+    private var symbol: Char = '#',
+    private var inPlay: Boolean = true) {
     private val reset: String = "\u001b[0m"
-    private var inPlay: Boolean = true
 
+    // really only need one function to swap pieces around, and that can be handled in the board class,
+    // but we do need alot of logic for valid moves, so it is easier to separate the logic into various functions.
     open fun isValidMove(currentPosition: Pair<Int, Int>, futurePosition: Pair<Int, Int>, board: Board): Boolean {
         return true
     }
